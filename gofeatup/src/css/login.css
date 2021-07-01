@@ -1,0 +1,41 @@
+.row {
+  height: 100%;
+}
+
+.vertical-center {
+  margin-top: 18%;
+}
+
+.myImage {
+  background-image: url(./INSCRIPTION.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+
+.styleHref:hover {
+  cursor: pointer;
+  color: #C803CA !important;
+  text-decoration: underline;
+}
+
+
+.butonColor{
+  background-color: #C803CA !important;
+  border-color: #C803CA !important;
+  width: 43% !important;
+}
+.backDark{
+  background-color: #200033;
+}
+
+.form-label, h3, h4, h5{
+  color: white !important;
+}
+
+.form-control, .form-control::placeholder, .css-yk16xz-control, .css-1wa3eu0-placeholder, .css-26l3qy-menu, .css-1f43avz-a11yText-A11yText, .css-1pahdxg-control {
+  background-color: #3E1747 !important;
+  border-color: #3E1747 !important;
+  color: white !important;;
+}

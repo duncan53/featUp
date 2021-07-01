@@ -1,0 +1,21 @@
+.nav-tabs .nav-link{
+  color: white !important;
+}
+
+.nav-tabs:hover .nav-link:hover{
+  color: white !important;
+  background-color: transparent !important;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color : #860087 !important;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link .nav-tabs:hover .nav-link.active:hover, .nav-tabs:hover .nav-item.show:hover .nav-link:hover{
+  background-color: transparent !important;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color : #860087 !important;
+
+}

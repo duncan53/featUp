@@ -1,0 +1,35 @@
+.col-sm-1 {
+  max-width: 6% !important;
+}
+
+.lefSticky {
+  position: sticky;
+  top: 0;
+}
+
+
+
+.secondMenu{
+  color: white;
+  margin-left: 20%;
+}
+.secondMenu:hover{
+  color: #C602C9;
+}
+
+.fullSecondMenu{
+  margin-bottom: -20%;
+}
+
+.mySvg{
+  color: white;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+.mySvg:hover > svg > g{
+  fill: #C602C9;
+}
+.mySvg:hover{
+  color: #C602C9;
+}

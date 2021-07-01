@@ -1,0 +1,4 @@
+.border-0, .card-img-top{
+  border-radius: 20% !important;
+  cursor: pointer;
+}

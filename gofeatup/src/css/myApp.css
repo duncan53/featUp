@@ -1,0 +1,17 @@
+.noPadding {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.sideBarBack{
+  background: linear-gradient(359.38deg, #210035 0.55%, #860087 99.49%);
+}
+
+.row{
+  margin-right: -0px !important;
+}
+
+.myMenu{
+  background-color: #4A0161;
+  box-shadow: 12px 0px 0px 0px rgba(0,0,0,0.25) !important;
+}

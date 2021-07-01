@@ -1,0 +1,22 @@
+.myCenter > p{
+  color: white;
+}
+
+.myCenter > h4{
+  color: #FD9AFE;
+}
+
+.myCenter > hr{
+  background-color: white;
+  border-width: 0.5vh;
+  border-radius: 1vh;
+}
+
+.myCenter > p, .myCenter > h4 {
+  cursor: pointer;
+}
+
+.mySticky {
+  position: sticky;
+  top: 0;
+}
