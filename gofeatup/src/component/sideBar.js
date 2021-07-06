@@ -17,16 +17,12 @@ function SideBar(props) {
   const [colorMusique] = useState('white');
   const [colorMain] = useState('white');
   const [colorTrait] = useState('white');
-  const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
-  const [open4, setOpen4] = useState(false);
 
   const resetOpen = () => {
-    setOpen1(false);
     setOpen2(false);
     setOpen3(false);
-    setOpen4(false);
   }
 
   const myRef = (path) =>{
@@ -61,32 +57,15 @@ function SideBar(props) {
               <Nav.Link value="Setting" className="secondMenu" > Mes Sons</Nav.Link>
               <Nav.Link value="Setting" className="secondMenu" > Mes Statistiques</Nav.Link>
               <Nav.Link value="Setting" className="secondMenu" onClick={() => {changePage("createCollab", "Créer une Collab")}}> Créer une Collab</Nav.Link>
-              <Nav.Link value="Setting" className="secondMenu" > Chercher une Collab</Nav.Link>
+              <Nav.Link value="Setting" className="secondMenu" onClick={() => {changePage("searchCollab", "Chercher une Collab")}}> Chercher une Collab</Nav.Link>
               <Nav.Link value="Setting" className="secondMenu" > Messagerie</Nav.Link>
             </div>
           </Collapse>
 
-          <Nav.Link  value="Social" className="mySvg"onClick={() => {resetOpen(); setOpen4(!open4)}}> <MusiqueTrait  color={colorTrait} alt="Social" value="Social"/>Abonnement</Nav.Link>
+          <Nav.Link  value="Social" className="mySvg"onClick={() => {resetOpen(); changePage("abonnement", "Abonnements")}}> <MusiqueTrait  color={colorTrait} alt="Social" value="Social"/>Abonnement</Nav.Link>
 
-          <Collapse in={open4} className="fullSecondMenu">
-            <div id="example-collapse-text">
-              <Nav.Link value="Setting" className="secondMenu" > Ma Playlist</Nav.Link>
-              <Nav.Link value="Setting" className="secondMenu" > Mes Artistes</Nav.Link>
-              <Nav.Link value="Setting" className="secondMenu" > Récemment Joué</Nav.Link>
-              <Nav.Link value="Setting" className="secondMenu" > Mes Statistiques</Nav.Link>
-            </div>
-          </Collapse>
 
-        <Nav.Link value="Streaming" className="mySvg" onClick={() => {resetOpen(); setOpen1(!open1)}} ><Boulon  color={colorBoulon} alt="Streaming" value="Streaming"/> Mon Menu</Nav.Link>
-
-          <Collapse in={open1} className="fullSecondMenu">
-            <div id="example-collapse-text">
-              <Nav.Link value="Setting" className="secondMenu" > Ma Playlist</Nav.Link>
-              <Nav.Link value="Setting" className="secondMenu" > Mes Artistes</Nav.Link>
-              <Nav.Link value="Setting" className="secondMenu" > Récemment Joué</Nav.Link>
-              <Nav.Link value="Setting" className="secondMenu" > Mes Statistiques</Nav.Link>
-            </div>
-          </Collapse>
+        <Nav.Link value="Streaming" className="mySvg" onClick={() => {resetOpen(); changePage("parameter", "Paramètres")}} ><Boulon  color={colorBoulon} alt="Streaming" value="Streaming"/> Paramètres</Nav.Link>
 
       </Nav>
     </div>

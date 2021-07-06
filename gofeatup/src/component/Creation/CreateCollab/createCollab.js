@@ -14,7 +14,7 @@ function CreateCollab(props) {
             <AddCollab />
           </Tab>
 
-          <Tab eventKey="myCollab" title="Antécédent" >
+          <Tab eventKey="myCollab" title="Mes Annonces" >
             <MyCollab />
           </Tab>
 

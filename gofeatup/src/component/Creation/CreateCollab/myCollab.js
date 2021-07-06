@@ -1,5 +1,6 @@
 import React from "react";
 import CollabCard from "./collabCard"
+import ResponseDiv from "./responseDiv"
 import { Row } from 'react-bootstrap'
 
 function MyCollab(props) {
@@ -9,6 +10,8 @@ function MyCollab(props) {
 
         <Row>
           <CollabCard/>
+
+          <ResponseDiv/>
         </Row>
 
     </div>

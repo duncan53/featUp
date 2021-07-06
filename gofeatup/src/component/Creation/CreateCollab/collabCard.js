@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormControl, InputGroup, Col } from 'react-bootstrap'
+import { Form, Col } from 'react-bootstrap'
 import CreateCollab from '../../../svg/createCollab.js';
 import '../../../css/myCollab.css';
 

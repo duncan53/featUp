@@ -1,0 +1,24 @@
+.backAccount{
+  background-color: #200033 !important;
+  max-width: 90% !important;
+  border-radius: 20px;
+}
+
+.backLogo{
+  background-color: #17001f !important;
+}
+
+.fontName{
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.tableInfo{
+  height: auto !important;
+}
+
+.butonDelete{
+  border: 3px solid #4708D5 !important;
+  background: #33036D !important;
+  border-radius: 15px !important;
+}

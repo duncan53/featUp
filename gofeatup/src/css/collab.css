@@ -1,18 +1,5 @@
-
-.Headerh3{
-  color: #33036D;
-}
-
-.sticky {
-  position: sticky;
-  top: 0;
-  background-color: #050007;
-  z-index: 999;
-}
-
-
-[data-letters]:before {
-  content:attr(data-letters);
+[data-numbers]:before {
+  content:attr(data-numbers);
   display:inline-block;
   font-size:1em;
   width:2.5em;
@@ -24,5 +11,5 @@
   vertical-align:middle;
   margin-right:1em;
   color:white;
-  background-color: #C803CA
+  background-color: #4708D5
   }

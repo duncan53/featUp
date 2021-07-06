@@ -41,6 +41,12 @@ function AddCollab() {
 
               <Row className="mb-3">
                 <Form.Group as={Col} xs={4}>
+
+                  <div className="py-2">
+                    <Form.Label>Titre</Form.Label>
+                    <Form.Control type="texte" placeholder="Titre de collab" id="titreForm" name="titreForm" />
+                  </div>
+
                   <div className="py-2">
                     <Form.Label>Genre</Form.Label>
                     <Form.Control type="texte" placeholder="Genre de collab" id="genreForm" name="genreForm" />

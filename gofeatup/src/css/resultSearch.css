@@ -1,0 +1,14 @@
+.cardSearch{
+  background: linear-gradient(359.38deg, #210035 0.55%, #860087 99.49%) !important;
+  max-width: 90% !important;
+  border-radius: 20px;
+}
+
+.cardSearchInside{
+  background-color: #200033 !important;
+  border-radius: 20px;
+}
+
+.cardFlex{
+  flex: 0 0 22% !important;
+}
