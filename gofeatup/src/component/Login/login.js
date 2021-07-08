@@ -56,8 +56,8 @@ function Login() {
   };
 
   return (
-      <Row>
-        <Col sm={8} className="myImage">
+      <Row className="myImage">
+        <Col sm={8} >
           <div className="text-light">
             <h1>FeatUp</h1>
             <h4>L’application de collaboration artistique</h4>

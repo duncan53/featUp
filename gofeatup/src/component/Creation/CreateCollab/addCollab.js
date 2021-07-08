@@ -13,10 +13,11 @@ function AddCollab() {
 
       const formCollab = new FormData(e.target);
 
-      serviceCollab.addCollab(formCollab.get('genreForm'), formCollab.get('typeForm'), formCollab.get('roleForm'), formCollab.get('locationForm'), formCollab.get('descriptionForm'))
+      serviceCollab.addCollab(formCollab.get('titreForm'), formCollab.get('genreForm'), formCollab.get('typeForm'), formCollab.get('roleForm'), formCollab.get('locationForm'), formCollab.get('descriptionForm'))
       .then((res) => {
           if (res.status === 201) {
-            alert("Its ok dude")
+            alert("Collaboration ajouter !")
+            document.location.reload();
           }
         })
         .catch(error => {

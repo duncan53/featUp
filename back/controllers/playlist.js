@@ -5,16 +5,8 @@ const fs = require('fs');
 exports.createPlaylist = (req, res, next) => {
   let music = new Playlist();
 
-
-  const url = req.protocol + '://' + req.get('host');
-
-
   music.label = req.body.label;
-  music.owner = req.body.idUser;
-  music.music = req.body.music;
-  music.isPrivate = req.body.isPrivate;
-
-  //myMail.sendMail(req.body.email, "Nouveau fichier", "Vous avez un nouveau fichier disponible sur la plateforme moncabinetradio.net");
+  music.owner = req.userId;
 
   music.save().then(
     () => {
@@ -32,10 +24,24 @@ exports.createPlaylist = (req, res, next) => {
 };
 
 exports.getAllPlaylist = (req, res, next) => {
-  Playlist.find().then(
-    (music) => {
+  Playlist.find({
+    owner: req.userId
+  })
+  .populate({
+    path : 'owner',
+    select: '-password -email',
+  })
+  .populate({
+    path : 'music',
+    populate : {
+      path : 'userOwner',
+      select: '-password -email'
+    }
+  })
+  .then(
+    (playlist) => {
       res.status(200).json({
-        music: music
+        playlist: playlist
       });
     }
   ).catch(
@@ -51,9 +57,9 @@ exports.getMyPlaylist = (req, res, next) => {
   Playlist.find(
     {owner: req.body.idUser}
   ).then(
-    (music) => {
+    (playlist) => {
       res.status(200).json({
-        music: music
+        playlist: playlist
       });
     }
   ).catch(
@@ -72,6 +78,32 @@ exports.deletePlaylist = (req, res, next) => {
           () => {
             res.status(200).json({
               message: 'Deleted!'
+            });
+          }
+        ).catch(
+          (error) => {
+          res.status(400).json({
+          error: error
+        });
+      }
+    );
+  });
+};
+
+
+exports.addMusic = (req, res, next) => {
+  Playlist.findOne({_id: req.params.id}).then(
+    (playlist) => {
+
+      let tabCollab = playlist.music;
+      let tempCollab = req.body.idMusic
+
+      tabCollab.push(tempCollab);
+
+        Playlist.findOneAndUpdate({_id: req.params.id},{music: tabCollab}).then(
+          () => {
+            res.status(201).json({
+              message: 'Musique add !'
             });
           }
         ).catch(

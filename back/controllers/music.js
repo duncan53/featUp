@@ -5,16 +5,13 @@ const fs = require('fs');
 exports.createMusic = (req, res, next) => {
   let music = new Music();
 
-
   const url = req.protocol + '://' + req.get('host');
-
 
   music.musicSrc = url + '/files/' + req.files.musicSrc[0].filename;
   music.cover = url + '/files/' + req.files.cover[0].filename;
-  music.userOwner = req.body.idUser;
+  music.userOwner = req.userId;
   music.feat = req.body.feat;
   music.name = req.body.name;
-  music.singer = req.body.singer;
   music.style = req.body.style;
 
   //myMail.sendMail(req.body.email, "Nouveau fichier", "Vous avez un nouveau fichier disponible sur la plateforme moncabinetradio.net");
@@ -36,7 +33,10 @@ exports.createMusic = (req, res, next) => {
 };
 
 exports.getAllMusic = (req, res, next) => {
-  Music.find().then(
+  Music.find().populate({
+    path : 'userOwner',
+    select: '-password -email',
+  }).then(
     (music) => {
       res.status(200).json({
         music: music
@@ -53,8 +53,11 @@ exports.getAllMusic = (req, res, next) => {
 
 exports.getMyMusic = (req, res, next) => {
   Music.find(
-    {userOwner: req.body.idUser}
-  ).then(
+    {userOwner: req.userId}
+  ).populate({
+    path : 'userOwner',
+    select: '-password -email',
+  }).then(
     (music) => {
       res.status(200).json({
         music: music

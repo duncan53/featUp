@@ -12,6 +12,8 @@ const userSchema = mongoose.Schema({
   dateNaissance: { type: Date, required: true },
   type: {type: mongoose.Schema.Types.ObjectId, ref: 'Type', required: true},
   pseudo: { type: String, required: true, unique: true  },
+  featUpPlus: { type: Boolean, default: false },
+  image: { type: String, default: "/images/defaultUser.png" },
   style: [{type: mongoose.Schema.Types.ObjectId, ref: 'Style'}]
   },
   { timestamps: true }

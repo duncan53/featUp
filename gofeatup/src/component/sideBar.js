@@ -38,15 +38,14 @@ function SideBar(props) {
   return (
     <div className="lefSticky">
       <Nav defaultActiveKey="/home" className="flex-column lefSticky">
-        <center> <Nav.Link onClick={() => {changePage("", "Acceuil")}}><FeatUp alt="goFeat"/></Nav.Link> </center>
+        <center> <Nav.Link onClick={() => {resetOpen(); changePage("", "Accueil")}}><FeatUp alt="goFeat"/></Nav.Link> </center>
           <Nav.Link  value="Setting" className="mySvg" onClick={() => {resetOpen(); setOpen2(!open2)}}><Musique  color={colorMusique} alt="Setting" value="Setting"/> Écoute</Nav.Link>
 
           <Collapse in={open2} className="fullSecondMenu">
               <div id="example-collapse-text">
                 <Nav.Link value="Setting" className="secondMenu" onClick={() => {changePage("playlist", "Playlist")}}> Ma Playlist</Nav.Link>
-                <Nav.Link value="Setting" className="secondMenu" > Mes Artistes</Nav.Link>
+                <Nav.Link value="Setting" className="secondMenu" onClick={() => {changePage("myartiste", "Mes Artistes")}}> Mes Artistes</Nav.Link>
                 <Nav.Link value="Setting" className="secondMenu" > Récemment Joué</Nav.Link>
-                <Nav.Link value="Setting" className="secondMenu" > Mes Statistiques</Nav.Link>
               </div>
             </Collapse>
 
@@ -54,11 +53,11 @@ function SideBar(props) {
 
           <Collapse in={open3} className="fullSecondMenu">
             <div id="example-collapse-text">
-              <Nav.Link value="Setting" className="secondMenu" > Mes Sons</Nav.Link>
-              <Nav.Link value="Setting" className="secondMenu" > Mes Statistiques</Nav.Link>
+              <Nav.Link value="Setting" className="secondMenu" onClick={() => {changePage("mysond", "Mes Sons")}}> Mes Sons</Nav.Link>
               <Nav.Link value="Setting" className="secondMenu" onClick={() => {changePage("createCollab", "Créer une Collab")}}> Créer une Collab</Nav.Link>
               <Nav.Link value="Setting" className="secondMenu" onClick={() => {changePage("searchCollab", "Chercher une Collab")}}> Chercher une Collab</Nav.Link>
-              <Nav.Link value="Setting" className="secondMenu" > Messagerie</Nav.Link>
+              <Nav.Link value="Setting" className="secondMenu" onClick={() => {changePage("messtats", "Mes Statistiques")}}> Mes Statistiques</Nav.Link>
+
             </div>
           </Collapse>
 

@@ -5,10 +5,10 @@ const musicCtrl = require('../controllers/music');
 const multer = require('../middleware/multer-config');
 const auth = require('../middleware/auth');
 
-router.post('/', multer, musicCtrl.createMusic);
+router.post('/', auth, multer, musicCtrl.createMusic);
 
-router.get('/', musicCtrl.getAllMusic);
-router.get('/:id', musicCtrl.getMyMusic);
+router.get('/', auth, musicCtrl.getAllMusic);
+router.get('/my', auth,  musicCtrl.getMyMusic);
 
 router.delete('/:id', auth, musicCtrl.deleteMusic);
 

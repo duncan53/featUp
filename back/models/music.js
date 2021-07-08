@@ -11,7 +11,6 @@ const musicSchema = mongoose.Schema(
     name: String,
     cover: String,
     musicSrc: String,
-    singer: String,
     like: {type: Number, default: 0},
     view: {type: Number, default: 0},
     isPrivate: {type: Boolean, default: false},

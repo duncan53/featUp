@@ -3,8 +3,11 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
 exports.signup = (req, res, next) => {
+  console.log(req.body);
   bcrypt.hash(req.body.password, 10).then(
     (hash) => {
+
+
 
       let user = new User();
 
@@ -90,6 +93,27 @@ exports.getAllUser = (req, res, next) => {
   );
 };
 
+exports.getMyInfo = (req, res, next) => {
+  User.findOne({
+    _id: req.userId
+  })
+  .select('-password')
+  .populate("type")
+  .then(
+    (user) => {
+      res.status(200).json({
+        user: user
+      });
+    }
+  ).catch(
+    (error) => {
+      res.status(400).json({
+        error: error
+      });
+    }
+  );
+};
+
 exports.deleteUser = (req, res, next) => {
   User.findOne({value: req.params.id}).then(
     (User) => {
@@ -122,6 +146,43 @@ exports.modifyUser = (req, res, next) => {
     () => {
       res.status(201).json({
         message: 'User modified successfully!'
+      });
+    }
+  ).catch(
+    (error) => {
+      res.status(400).json({
+        error: error
+      });
+    }
+  );
+};
+
+exports.subToFeatUpPlus = (req, res, next) => {
+  User.findOneAndUpdate({_id: req.userId}, {featUpPlus: true}).then(
+    () => {
+      res.status(201).json({
+        message: 'Abbonement actif !'
+      });
+    }
+  ).catch(
+    (error) => {
+      res.status(400).json({
+        error: error
+      });
+    }
+  );
+};
+
+exports.changeImage = (req, res, next) => {
+
+  const url = req.protocol + '://' + req.get('host');
+
+  let myUrl = url + '/files/' + req.file.filename;
+
+  User.findOneAndUpdate({_id: req.userId}, {image: myUrl}).then(
+    () => {
+      res.status(201).json({
+        message: 'Image de profil changer !'
       });
     }
   ).catch(

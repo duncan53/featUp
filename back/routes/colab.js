@@ -7,8 +7,11 @@ const auth = require('../middleware/auth');
 
 router.post('/', auth, colabCtrl.createColab);
 
-router.get('/', colabCtrl.getAllColab);
-router.get('/:id', colabCtrl.getMyColab);
+router.get('/', auth, colabCtrl.getAllColab);
+router.get('/my', auth, colabCtrl.getMyColab);
+router.get('/other', auth, colabCtrl.getAllColabNotMe);
+
+router.put('/addResponse/:id', auth, colabCtrl.addResponse);
 
 router.delete('/:id', auth, colabCtrl.deleteColab);
 

@@ -7,11 +7,13 @@
 .critereButonColor{
   background-color: #4708D5 !important;
   border-color: #4708D5 !important;
+  border-radius: 10px!important;
 }
 
 .butonColorCritere{
   background-color: #4708D5 !important;
   border-color: #4708D5 !important;
+  border-radius: 10px!important;
 }
 
 .sizeSelect .css-yk16xz-control{

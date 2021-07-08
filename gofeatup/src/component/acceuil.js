@@ -33,7 +33,7 @@ function Accueil(props) {
       <Row className="ml-2">
 
         {music.length <= 0 ? <></> : music.map((dat, index) => (
-          <div key={index} onClick={ () =>{pushMusic(dat)}}>
+          <div key={index} onClick={ () =>{pushMusic(dat)}} className="mx-2 my-3">
             <CardMusic music={dat}  />
           </div>
         ))}

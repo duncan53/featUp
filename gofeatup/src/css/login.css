@@ -8,7 +8,7 @@
 
 .myImage {
   background-image: url(./INSCRIPTION.svg);
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
@@ -25,6 +25,7 @@
   background-color: #C803CA !important;
   border-color: #C803CA !important;
   width: 43% !important;
+  border-radius: 10px!important;
 }
 .backDark{
   background-color: #200033;

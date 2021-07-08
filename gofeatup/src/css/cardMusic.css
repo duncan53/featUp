@@ -1,4 +1,13 @@
 .border-0, .card-img-top{
   border-radius: 20% !important;
   cursor: pointer;
+  background-color: #050007 !important;
+}
+
+.backgroundCard{
+  background-color: #050007 !important;
+}
+
+.ptilte{
+  margin-bottom: 0 !important;
 }

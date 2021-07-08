@@ -36,6 +36,7 @@
 /back/logs
 *.log
 /back/npm-debug.log*
+/back/files*
 /back/yarn-debug.log*
 /back/yarn-error.log*
 /back/lerna-debug.log*

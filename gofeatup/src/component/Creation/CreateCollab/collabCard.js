@@ -11,28 +11,28 @@ function CollabCard(props) {
         <div className="mx-4">
           <div className="my-3">
             <CreateCollab/>
-            <span className="text-white display-5 ml-2">Annonce :</span>
+            <span className="text-white display-5 ml-2">Annonce : {props.collab.titre}</span>
           </div>
 
           <div className="pb-4">
             <Form.Label>Genre</Form.Label>
-            <Form.Control type="texte" />
+            <Form.Control type="texte" defaultValue={props.collab.genre} readOnly/>
           </div>
           <div className="pb-4">
             <Form.Label>Type de projet</Form.Label>
-            <Form.Control type="texte" />
+            <Form.Control type="texte" defaultValue={props.collab.type} readOnly/>
           </div>
           <div className="pb-4">
             <Form.Label>Mon rôle</Form.Label>
-            <Form.Control type="texte" />
+            <Form.Control type="texte" defaultValue={props.collab.role} readOnly/>
           </div>
           <div className="pb-4">
             <Form.Label>Ma localisation</Form.Label>
-            <Form.Control type="texte" />
+            <Form.Control type="texte" defaultValue={props.collab.location} readOnly/>
           </div>
           <div className="pb-4">
             <Form.Label>Description</Form.Label>
-            <Form.Control as="textarea" />
+            <Form.Control as="textarea" defaultValue={props.collab.description} readOnly/>
           </div>
         </div>
 

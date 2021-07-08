@@ -1,0 +1,26 @@
+.modalStyle{
+  background-color: #200033;
+}
+
+.close span{
+  color: white ;
+}
+
+.modal-dialog, .modal-lg{
+  background-color: #4009bd;
+}
+
+.dropZoneStyle{
+  background-color: #3e1747 !important;
+  border-radius: 10px;
+}
+
+.darkPurple{
+  color: #200033;
+}
+
+.bottonModal{
+  background-color: #4708D5 !important;
+  border-color: #4708D5 !important;
+  border-radius: 10px !important;
+}

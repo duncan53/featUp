@@ -4,10 +4,13 @@ import Header from "./header"
 import Accueil from "./acceuil"
 import Player from "./player"
 import Playlist from "./Listen/playlist"
+import MyArtiste from "./Listen/myArtiste"
 import CreateCollab from "./Creation/CreateCollab/createCollab"
 import SearchCollab from "./Creation/SearchCollab/searchCollab"
+import MySound from "./Creation/MySounds/mySound"
 import MySubscription from "./Subscription/mySubscription"
 import MyParameter from "./Parameter/myParameter"
+import Statistique from "./Creation/Statistique/statistique"
 import { Row, Col } from 'react-bootstrap'
 import '../css/myApp.css';
 
@@ -16,22 +19,7 @@ function MyApp() {
 
   const [myTitlte, setMyTitlte] = useState("Acceuil")
 
-  const [audioSrc, setAudioSrc] = useState([
-    {
-      musicSrc: "/audio/combined.wav",
-      cover: "/audio/cover1.jpg",
-      name: "Combined",
-      singer: "Mathieu",
-      key: 1
-    },
-    {
-      musicSrc: "/audio/rap.wav",
-      cover: "/audio/cover2.jpg",
-      name: "Rap",
-      singer: "Théo",
-      key: 2
-    }
-  ]);
+  const [audioSrc, setAudioSrc] = useState([]);
 
   const onPageChange = e => {
     setMyTitlte(e)
@@ -74,6 +62,12 @@ function MyApp() {
           <SearchCollab />
         : window.location.hash === "#parameter" ?
           <MyParameter />
+        : window.location.hash === "#mysond" ?
+          <MySound  addMusic={addMusic} />
+        : window.location.hash === "#myartiste" ?
+          <MyArtiste  addMusic={addMusic} />
+        : window.location.hash === "#messtats" ?
+          <Statistique/>
         : <Accueil addMusic={addMusic} />}
 
 

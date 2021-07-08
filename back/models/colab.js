@@ -9,6 +9,7 @@ const colabSchema = mongoose.Schema({
   value: Number,
   genre: String,
   type: String,
+  titre: String,
   role: String,
   location: String,
   description: String,

@@ -7,4 +7,12 @@
 .butonColorSub{
   background-color: #33036D !important;
   border-color: #33036D !important;
+  border-radius: 10px!important;
+}
+
+.colModalSub{
+  background-color: #050007;
+  border: 3px solid #050007;
+  border-radius: 15px;
+  cursor: pointer;
 }

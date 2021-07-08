@@ -6,6 +6,17 @@ import Switch from '@material-ui/core/Switch';
 
 function Account(props) {
 
+  function myDateConverterFR(myDate){
+    var tempDate = new Date(myDate);
+
+    var month = tempDate.getMonth()+1;
+    var day = tempDate.getDate();
+
+    if (month < 10) {month = "0" + month};
+    if (day < 10) {day = "0" + day};
+    return day+"/"+month+"/"+tempDate.getFullYear();
+  }
+
   return (
     <div className="ml-5 my-4">
       <UserParam/> <span className="ml-3 text-white"> Mon Compte</span>
@@ -20,7 +31,7 @@ function Account(props) {
 
             <Col className="text-white" xs={5}>Nom d'artiste</Col>
 
-            <Col className="text-white" xs={5}>MECHTA Mathieu</Col>
+            <Col className="text-white" xs={5}>{props.info.pseudo}</Col>
 
             <Col><Edit/></Col>
 
@@ -30,7 +41,7 @@ function Account(props) {
 
             <Col className="text-white" xs={5}>Adresse email</Col>
 
-            <Col className="text-white" xs={5}>mechtamathieu@gmail.com</Col>
+            <Col className="text-white" xs={5}>{props.info.email}</Col>
 
             <Col><Edit/></Col>
 
@@ -60,7 +71,7 @@ function Account(props) {
 
             <Col className="text-white" xs={5}>Date de naissance</Col>
 
-            <Col className="text-white" xs={5}>17/04/2000</Col>
+            <Col className="text-white" xs={5}>{myDateConverterFR(props.info.dateNaissance)}</Col>
 
             <Col><Edit/></Col>
 

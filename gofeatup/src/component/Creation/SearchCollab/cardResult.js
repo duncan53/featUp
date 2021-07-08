@@ -5,7 +5,7 @@ import '../../../css/resultSearch.css';
 function CardResult(props) {
 
   return (
-    <Col className="cardSearch ml-4 mt-4 cardFlex" xs={3}>
+    <Col className="cardSearch ml-4 mt-4 cardFlex" xs={3} onClick={ () =>{props.onSelect(props.collab)}}>
 
       <div className="my-3">
         <center>
@@ -19,9 +19,9 @@ function CardResult(props) {
 
           <div className="mx-2">
             <br/>
-            <p className="text-white">Type de projet</p>
-            <p className="text-white">Rôle rechercher</p>
-            <p className="text-white">Genre de musique</p>
+            <p className="text-white">{props.collab.titre}</p>
+            <p className="text-white">{props.collab.type}</p>
+            <p className="text-white">{props.collab.genre}</p>
               <br/>
           </div>
 

@@ -7,7 +7,7 @@ autoIncrement.initialize(connection);
 
 const playlistSchema = mongoose.Schema({
   value: Number,
-  Label: String,
+  label: String,
   isPrivate: { type: Boolean, default: true },
   owner: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   music: [{type: mongoose.Schema.Types.ObjectId, ref: 'Music'}]
